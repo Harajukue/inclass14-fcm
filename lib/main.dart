@@ -1,7 +1,3 @@
-// In-Class Activity #14 — Firebase Cloud Messaging in Flutter
-// CSC 4360 — Mobile App Development — Spring 2026
-// Luci Liu
-
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
@@ -31,12 +27,10 @@ class FcmDemoApp extends StatelessWidget {
   }
 }
 
-// ── Notification log entry ────────────────────────────────────────────────
-
 class NotificationEntry {
   final String title;
   final String body;
-  final String handler; // 'Foreground', 'Background tap', 'Terminated tap'
+  final String handler;
   final String? dataPayload;
   final DateTime receivedAt;
 
@@ -47,8 +41,6 @@ class NotificationEntry {
     this.dataPayload,
   }) : receivedAt = DateTime.now();
 }
-
-// ── Main screen ───────────────────────────────────────────────────────────
 
 class NotificationScreen extends StatefulWidget {
   const NotificationScreen({super.key});
@@ -141,7 +133,6 @@ class _NotificationScreenState extends State<NotificationScreen> {
       ),
       body: Column(
         children: [
-          // FCM token card
           Container(
             width: double.infinity,
             margin: const EdgeInsets.all(16),
@@ -174,7 +165,6 @@ class _NotificationScreenState extends State<NotificationScreen> {
             ),
           ),
 
-          // Legend
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Row(
